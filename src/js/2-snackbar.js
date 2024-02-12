@@ -70,7 +70,7 @@ form.addEventListener('submit', e => {
 		})
 		.catch(error => {
 			iziToast.show({
-				iconUrl: './img/bi_x-octagon.png',
+				iconUrl: './img/close.svg',
 				title: 'Error',
 				titleColor: '#fff',
 				message: `Rejected promise in ${error} ms`,
