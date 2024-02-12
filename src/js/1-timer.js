@@ -3,14 +3,16 @@ import flatpickr from 'flatpickr';
 import 'flatpickr/dist/flatpickr.min.css';
 import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
+
 // ===========Variables===============
 const timer = document.querySelector('.timer-box');
 let date = Date.now();
 let userSelectedDate;
+
 // =============Create Timer================
 function timerTemplate() {
 	return `<input type="text" id="datetime-picker" placeholder="Оберіть дату та час"/>
-<button type="button" data-start>Start</button>
+<button class="startBtn" type="button" data-start>Start</button>
 
 <div class="timer">
   <div class="field">
@@ -60,7 +62,7 @@ const options = {
 flatpickr('#datetime-picker', options);
 
 // ===============Settings Btn=================
-const startBtn = document.querySelector('button');
+const startBtn = document.querySelector('.startBtn');
 startBtn.disabled = true;
 let difference;
 let setIntervalId;
@@ -85,7 +87,6 @@ function stopTimer(difference) {
 }
 
 // =========Converting date===========
-
 function convertFromMilleseconds(ms) {
   const second = 1000;
   const minute = second * 60;
@@ -101,7 +102,6 @@ function convertFromMilleseconds(ms) {
 }
 
 // ================Showing results=================
-
 const day = document.querySelector('.value[ data-days]');
 const hour = document.querySelector('.value[ data-hours]');
 const minute = document.querySelector('.value[ data-minutes]');
