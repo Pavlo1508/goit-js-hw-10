@@ -59,7 +59,7 @@ form.addEventListener('submit', e => {
 	createPromise(delay, promiseState)
 		.then(value => {
 			iziToast.show({
-				iconUrl: '../img/bi_check2-circle.png',
+				iconUrl: './img/bi_check2-circle.png',
 				title: 'OK',
 				titleColor: '#fff',
 				message: `Fulfilled promise in ${value} ms`,
@@ -70,7 +70,7 @@ form.addEventListener('submit', e => {
 		})
 		.catch(error => {
 			iziToast.show({
-				iconUrl: '../img/bi_x-octagon.png',
+				iconUrl: './img/bi_x-octagon.png',
 				title: 'Error',
 				titleColor: '#fff',
 				message: `Rejected promise in ${error} ms`,
