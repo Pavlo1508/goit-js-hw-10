@@ -40,13 +40,13 @@ timer.innerHTML = timerTemplate();
 const options = {
   enableTime: true,
   time_24hr: true,
-  defaultDate: new Date(),
+  // defaultDate: new Date(),
   minuteIncrement: 1,
   onClose(selectedDates) {
 			userSelectedDate = selectedDates[0];
 			if (userSelectedDate < date) {
 				iziToast.show({
-					iconUrl: '../img/Waring.png',
+					iconUrl: '../img/bi_x-octagon.png',
 					message: 'Please choose a date in the future',
 					messageColor: '#FFFFFF',
         	backgroundColor: '#B51B1B',
@@ -55,7 +55,7 @@ const options = {
 		} else {
 			startBtn.disabled = false;
       startBtn.style.background = '#4E75FF';
-      startBtn.style.color = '#FFF';
+			startBtn.style.color = '#FFF';;
 		}
   },
 };
@@ -70,7 +70,7 @@ let setIntervalId;
 startBtn.addEventListener('click', () => {
   startBtn.disabled = true;
   startBtn.style.background = '#CFCFCF';
-  startBtn.style.color = '#989898';
+	startBtn.style.color = '#989898';
   difference = userSelectedDate - Date.now();
   timerNumber(convertFromMilleseconds(difference));
   setIntervalId = setInterval(() => {

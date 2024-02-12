@@ -1,17 +1,14 @@
 // ===========Librarys==============
-
 import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
 
 // ===========Variables===============
-
 const form = document.querySelector('.form');
 
 // ==========Create Form===============
-
 function formTemplate() {
 	return `
-  <label>
+  <label class="delay-label">
     Delay (ms)
     <input type="number" name="delay" required />
   </label>
@@ -33,5 +30,54 @@ function formTemplate() {
 
 form.innerHTML = formTemplate();
 
-// ==========Create promis===========
+// =========Form Setting and Create Promise============
+const input = document.querySelector('label > input');
 
+let delay;
+
+input.addEventListener('input', e => {
+	delay = e.currentTarget.value;
+})
+
+form.addEventListener('submit', e => {
+	e.preventDefault();
+	const promiseState = form.elements.state.value;
+	function createPromise(delay, state) {
+		return new Promise((resolve, reject) => {
+			setTimeout(() => {
+				if (state === 'fulfilled') {
+					resolve(delay);
+				} else {
+					reject(delay);
+				}
+			}, delay);
+		});
+	}
+
+	
+
+	createPromise(delay, promiseState)
+		.then(value => {
+			iziToast.show({
+				iconUrl: '../img/bi_check2-circle.png',
+				title: 'OK',
+				titleColor: '#fff',
+				message: `Fulfilled promise in ${value} ms`,
+				messageColor: '#FFFFFF',
+				backgroundColor: '#59A10D',
+				position: 'topRight',
+			});
+		})
+		.catch(error => {
+			iziToast.show({
+				iconUrl: '../img/bi_x-octagon.png',
+				title: 'Error',
+				titleColor: '#fff',
+				message: `Rejected promise in ${error} ms`,
+				messageColor: '#FFFFFF',
+				backgroundColor: '#EF4040',
+				position: 'topRight',
+			});
+		});
+	form.reset();
+});

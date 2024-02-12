@@ -95,6 +95,11 @@ header button {
 	margin-bottom: 32px;
 }
 
+.timer-box .startBtn:hover {
+	background: #6c8cff;
+	color: #ffffff;
+}
+
 .timer {
 	display: flex;
 	gap: 24px;
