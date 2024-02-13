@@ -60,7 +60,7 @@ form.addEventListener('submit', e => {
 	createPromise(delay, promiseState)
 		.then(value => {
 			iziToast.show({
-				iconUrl: iconOk,
+				icon: iconOk,
 				title: 'OK',
 				titleColor: '#fff',
 				message: `Fulfilled promise in ${value} ms`,
@@ -71,7 +71,7 @@ form.addEventListener('submit', e => {
 		})
 		.catch(error => {
 			iziToast.show({
-				iconUrl: iconError,
+				icon: iconError,
 				title: 'Error',
 				titleColor: '#fff',
 				message: `Rejected promise in ${error} ms`,
