@@ -71,7 +71,7 @@ form.addEventListener('submit', e => {
 		})
 		.catch(error => {
 			iziToast.show({
-				icon: iconError,
+				iconUrl: iconError,
 				imageWidth: 50,
 				title: 'Error',
 				titleColor: '#fff',
