@@ -60,7 +60,7 @@ form.addEventListener('submit', e => {
 	createPromise(delay, promiseState)
 		.then(value => {
 			iziToast.show({
-				icon: iconOk,
+				iconUrl: iconOk,
 				title: 'OK',
 				titleColor: '#fff',
 				message: `Fulfilled promise in ${value} ms`,
