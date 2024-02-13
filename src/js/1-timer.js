@@ -3,7 +3,7 @@ import flatpickr from 'flatpickr';
 import 'flatpickr/dist/flatpickr.min.css';
 import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
-// const iconError = 
+const iconError = '../img/bi_x-octagon.png';
 // ===========Variables===============
 const timer = document.querySelector('.timer-box');
 let date = Date.now();
@@ -46,7 +46,7 @@ const options = {
 			userSelectedDate = selectedDates[0];
 			if (userSelectedDate < date) {
 				iziToast.show({
-					iconUrl: './img/bi_x-octagon.png',
+					iconUrl: iconError,
 					message: 'Please choose a date in the future',
 					messageColor: '#FFFFFF',
         	backgroundColor: '#B51B1B',

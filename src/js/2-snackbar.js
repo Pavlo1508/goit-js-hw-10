@@ -1,8 +1,8 @@
 // ===========Librarys==============
 import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
-// const iconOk = 
-// const iconError = 
+const iconOk = '../img/bi_check2-circle.png';
+const iconError = '../img/bi_x-octagon.png';
 // ===========Variables===============
 const form = document.querySelector('.form');
 
@@ -60,7 +60,7 @@ form.addEventListener('submit', e => {
 	createPromise(delay, promiseState)
 		.then(value => {
 			iziToast.show({
-				iconUrl: './img/bi_check2-circle.png',
+				iconUrl: iconOk,
 				title: 'OK',
 				titleColor: '#fff',
 				message: `Fulfilled promise in ${value} ms`,
@@ -71,7 +71,7 @@ form.addEventListener('submit', e => {
 		})
 		.catch(error => {
 			iziToast.show({
-				iconUrl: './img/bi_x-octagon.png',
+				iconUrl: iconError,
 				title: 'Error',
 				titleColor: '#fff',
 				message: `Rejected promise in ${error} ms`,
