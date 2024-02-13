@@ -1,8 +1,8 @@
 // ===========Librarys==============
 import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
-const iconOk = '../img/bi_check2-circle.png';
-const iconError = '../img/bi_x-octagon.png';
+import iconOk from '../img/bi_check2-circle.png';
+import iconError from '../img/bi_x-octagon.png';
 // ===========Variables===============
 const form = document.querySelector('.form');
 
@@ -71,7 +71,7 @@ form.addEventListener('submit', e => {
 		})
 		.catch(error => {
 			iziToast.show({
-				image: '../img/bi_check2-circle.png',
+				image: iconError,
 				imageWidth: 50,
 				title: 'Error',
 				titleColor: '#fff',

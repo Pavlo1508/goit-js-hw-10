@@ -3,7 +3,7 @@ import flatpickr from 'flatpickr';
 import 'flatpickr/dist/flatpickr.min.css';
 import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
-const iconError = '../img/bi_x-octagon.png';
+import iconError from '../img/bi_x-octagon.png';
 // ===========Variables===============
 const timer = document.querySelector('.timer-box');
 let date = Date.now();
